@@ -1,71 +1,40 @@
-* {
-  color: rgb(255, 255, 255);
-  font-family: sans-serif;
-}
-
-body {
-  background-color: #85d1fd;
-}
-
-.App {
+.container {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  margin-top: 40px;
-  width: 80%;
-  margin-bottom: 100px;
-}
-
-#editor {
-  width: 100%;
-  height: 70vh;
-  font-size: 18px;
-  background-color: #04557b;
-  resize: none;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #282c34;
   color: white;
-  padding: 20px;
-  overflow: auto;
-  border-radius: 20px;
 }
 
-#preview {
-  width: 100%;
-  height: 70vh;
-  margin-top: 20px;
-  font-size: 18px;
-  background-color: #04557b;
-  color: white;
-  padding: 20px;
-  overflow: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(1, 124, 255, 0.615), 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-img {
-  max-width: 100%;
-}
-
-#heading {
+.display {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 300px;
   text-align: center;
-  margin-top: 50px;
+  background-color: #333;
+  border-radius: 5px;
 }
 
-@media screen and (min-width: 768px) {
-  .App {
-    flex-direction: row;
-    width: 80%;
-  }
+.pads {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+}
 
-  #editor {
-    width: 50%;
-    height: 80vh;
-    margin-right: 10px;
-  }
+.drum-pad {
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+}
 
-  #preview {
-    width: 50%;
-    height: 80vh;
-    margin-left: 10px;
-    margin-top: 0;
-  }
+.drum-pad:hover {
+  background-color: #555;
 }

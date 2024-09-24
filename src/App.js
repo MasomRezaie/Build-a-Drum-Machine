@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import MarkdownPreviwer from './Component/MarkdownPreviwer';
+import DrumMachine from './Component/DrumMachine';
 
 function App() {
   return (
-    <MarkdownPreviwer />
+    <DrumMachine />
   );
 }
 
