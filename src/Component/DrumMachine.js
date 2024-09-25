@@ -34,27 +34,29 @@ const DrumMachine = () => {
 
   return (
     <div id="drum-machine" className="container">
-      <div id="display" className="display">{display}</div>
-      <h1 id='drum'>Drum Machine</h1>
-      <div className="pads">
-        {drumPads.map((pad) => (
-          <div
-            role="button"
-            tabIndex="0"
-            key={pad.key}
-            id={pad.id}
-            className="drum-pad"
-            onClick={() => playSound(pad.id, pad.key)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') playSound(pad.id, pad.key);
-            }}
-          >
-            {pad.key}
-            <audio className="clip" id={pad.key} src={pad.src}>
-              <track kind="captions" />
-            </audio>
-          </div>
-        ))}
+      <div id="drum">
+        <h1>Drum Machine</h1>
+        <div id="display" className="display">{display}</div>
+        <div className="pads">
+          {drumPads.map((pad) => (
+            <div
+              role="button"
+              tabIndex="0"
+              key={pad.key}
+              id={pad.id}
+              className="drum-pad"
+              onClick={() => playSound(pad.id, pad.key)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') playSound(pad.id, pad.key);
+              }}
+            >
+              {pad.key}
+              <audio className="clip" id={pad.key} src={pad.src}>
+                <track kind="captions" />
+              </audio>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
