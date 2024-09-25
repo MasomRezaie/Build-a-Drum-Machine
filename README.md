@@ -58,4 +58,4 @@ Open your browser to http://localhost:3000 to view the app. You can click the on
 
 
 # Contributing 🙏
- Please review the code and let me know if any further adjustments are needed!. 
+ Please review the code and let me know if any further adjustments are needed!.
