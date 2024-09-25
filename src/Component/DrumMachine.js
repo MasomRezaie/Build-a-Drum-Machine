@@ -1,4 +1,4 @@
-// markdown previwe peoject
+// Drum Machine project
 import React, { useState } from 'react';
 
 const DrumMachine = () => {
@@ -13,7 +13,7 @@ const DrumMachine = () => {
     { key: 'D', id: 'Open-HH', src: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3' },
     { key: 'Z', id: 'Kick-n-Hat', src: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3' },
     { key: 'X', id: 'Kick', src: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3' },
-    { key: 'C', id: 'Closed-HH', src: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3' }
+    { key: 'C', id: 'Closed-HH', src: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3' },
   ];
 
   const playSound = (id, key) => {
@@ -23,7 +23,7 @@ const DrumMachine = () => {
   };
 
   const handleKeyPress = (e) => {
-    const pad = drumPads.find(p => p.key === e.key.toUpperCase());
+    const pad = drumPads.find((p) => p.key === e.key.toUpperCase());
     if (pad) playSound(pad.id, pad.key);
   };
 
@@ -35,16 +35,24 @@ const DrumMachine = () => {
   return (
     <div id="drum-machine" className="container">
       <div id="display" className="display">{display}</div>
+      <h1 id='drum'>Drum Machine</h1>
       <div className="pads">
-        {drumPads.map(pad => (
+        {drumPads.map((pad) => (
           <div
+            role="button"
+            tabIndex="0"
             key={pad.key}
             id={pad.id}
             className="drum-pad"
             onClick={() => playSound(pad.id, pad.key)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') playSound(pad.id, pad.key);
+            }}
           >
             {pad.key}
-            <audio className="clip" id={pad.key} src={pad.src}></audio>
+            <audio className="clip" id={pad.key} src={pad.src}>
+              <track kind="captions" />
+            </audio>
           </div>
         ))}
       </div>
@@ -53,4 +61,3 @@ const DrumMachine = () => {
 };
 
 export default DrumMachine;
-
