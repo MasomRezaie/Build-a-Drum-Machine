@@ -1,7 +1,7 @@
 body {
   margin: 0%;
   padding: 0%;
-  background: url(./assess/drum)
+  background: url(./assess/drum);
 }
 
 .container {
@@ -18,13 +18,13 @@ body {
 }
 
 #drum {
-  border: 2px solid rgba(225, 225, 225, .2);
+  border: 2px solid rgba(225, 225, 225, 0.2);
   height: 70vh;
   margin-bottom: 10px;
   width: 60vh;
   margin-left: 20px;
   border-radius: 20px;
-  background-color: rgba(253, 91, 215, .2);
+  background-color: rgba(253, 91, 215, 0.2);
 }
 
 .display {
